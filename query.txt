@@ -1,0 +1,9 @@
+
+
+SELECT f. f_id_funcionario, f_uf, f_ano_nascimento, fp_id_funcionario, fp_id_projeto
+FROM funcionario AS f, funcionario_projeto AS fp
+CONCAT(f_id_funcionario, ',', f_uf, ',' f_ano_nascimento, ',', fp_id_projeto)
+SELECT fp_id_funcionario, count(*)
+FROM funcionario_projeto
+HAVING COUNT(*) > 3
+ORDER BY COUNT(*)
